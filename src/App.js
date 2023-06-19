@@ -15,17 +15,6 @@ function App() {
 
   return (
     <>
-      <h2
-        style={{
-          display: "flex",
-          position: "relative",
-          justifyContent: "center",
-          margin: "1rem",
-          color: "GrayText",
-        }}
-      >
-        CRUD REACT APP
-      </h2>
       <Bar onValueChange={handleValueChange} />
       {value === "Home" && <Home />}
       {value === "ThreePicon" && <Clientes />}
