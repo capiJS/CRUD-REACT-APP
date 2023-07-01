@@ -3,6 +3,7 @@ export default function Home() {
     <div>
       <img
         style={{
+          position: "absolute",
           width: "100%",
           height: "auto",
           maxWidth: "100vw",
@@ -10,6 +11,7 @@ export default function Home() {
           opacity: "",
         }}
         src="star-wars-darth-vader-emperor-palpatine-stormtrooper-wallpaper-preview.jpg"
+        alt="ultima cena star wars"
       />
     </div>
   );

@@ -25,11 +25,11 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   tabsCustom: {
     "& .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root.Mui-active": {
-      color: "#8f19d2",
+      color: "#000",
       fontWeight: "bold",
 
       "& .css-1azl6jz-MuiTableCell-root": {
-        color: "#8f19d2",
+        color: "#000",
         fontWeight: "bold",
       },
     },
@@ -151,7 +151,7 @@ function EnhancedTableHead(props) {
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
-            color="primary"
+            color="default"
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
@@ -411,7 +411,7 @@ export default function EnhancedTable() {
                       >
                         <TableCell padding="checkbox">
                           <Checkbox
-                            color="primary"
+                            style={{ color: "#000" }}
                             checked={isItemSelected}
                             inputProps={{
                               "aria-labelledby": labelId,

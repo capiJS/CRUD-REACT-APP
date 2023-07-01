@@ -23,7 +23,7 @@ import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import { Backdrop, FormControl, FormLabel } from "@mui/material";
+import { Backdrop } from "@mui/material";
 import { styled } from "@mui/system";
 import Modal from "@mui/base/Modal";
 import Input from "@mui/base/Input";
@@ -42,11 +42,11 @@ import DeleteModal from "./DeleteModal";
 const useStyles = makeStyles((theme) => ({
   tabsCustom: {
     "& .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root.Mui-active": {
-      color: "#8f19d2",
+      color: "#000",
       fontWeight: "bold",
 
       "& .css-1azl6jz-MuiTableCell-root": {
-        color: "#8f19d2",
+        color: "#000",
         fontWeight: "bold",
       },
     },
@@ -142,7 +142,7 @@ function EnhancedTableHead(props) {
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
-            color="secondary"
+            color="default"
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
@@ -277,7 +277,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 function CustomizedSnackbars({ snack, setSnack }) {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   // const handleClick = () => {
   //   setOpen(true);
@@ -321,7 +321,7 @@ function CustomizedSnackbars({ snack, setSnack }) {
 }
 
 function CustomizedSnackbarsGuardar({ snackGuardar, setSnackGuardar }) {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   // const handleClick = () => {
   //   setOpen(true);
@@ -365,7 +365,7 @@ function CustomizedSnackbarsGuardar({ snackGuardar, setSnackGuardar }) {
 }
 
 function CustomizedSnackbarsAñadir({ snackAñadir, setSnackAñadir }) {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   // const handleClick = () => {
   //   setOpen(true);
@@ -408,7 +408,7 @@ function CustomizedSnackbarsAñadir({ snackAñadir, setSnackAñadir }) {
   );
 }
 function CustomizedSnackbarsBorrar({ snackBorrar, setSnackBorrar }) {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   // const handleClick = () => {
   //   setOpen(true);
@@ -597,9 +597,9 @@ export default function Empleados() {
             return updated.em_id !== response.data.em_id;
           })
         );
-        setSelected([]);
         setOpenModal(false);
         setSnackBorrar(true);
+        setSelected([]);
       }
     });
   };
@@ -644,6 +644,7 @@ export default function Empleados() {
           em_cedula: "",
           em_celular: "",
         });
+        setSelected([]);
       }
     } catch (error) {
       console.error("Error adding empleado:", error);
@@ -690,6 +691,7 @@ export default function Empleados() {
           em_cedula: "",
           em_celular: "",
         });
+        setSelected([]);
       }
     } catch (error) {
       console.error("Error updating empleado:", error);
@@ -960,7 +962,7 @@ export default function Empleados() {
                       >
                         <TableCell padding="checkbox">
                           <Checkbox
-                            color="primary"
+                            style={{ color: "#000" }}
                             checked={isItemSelected}
                             inputProps={{
                               "aria-labelledby": labelId,

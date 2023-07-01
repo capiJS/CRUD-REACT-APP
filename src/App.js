@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Bar from "./components/Bar";
 import Clientes from "./components/Clientes";
 import Empleados from "./components/Empleados";
@@ -21,7 +21,6 @@ function App() {
           position: "relative",
           justifyContent: "center",
           margin: "1rem",
-          color: "GrayText",
         }}
       >
         CRUD REACT APP
@@ -36,4 +35,38 @@ function App() {
   );
 }
 
-export default App;
+function AppWithBackground() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const image = new Image();
+    image.onload = () => {
+      setIsLoaded(true);
+    };
+    image.src = "death star.jpg";
+  }, []);
+
+  return (
+    <>
+      {isLoaded && (
+        <img
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "auto",
+            maxWidth: "100vw",
+            maxHeight: "100vh",
+            opacity: "40%",
+          }}
+          src="death star.jpg"
+          alt="Background"
+        />
+      )}
+      <App />
+    </>
+  );
+}
+
+export default AppWithBackground;
