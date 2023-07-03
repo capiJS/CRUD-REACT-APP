@@ -38,6 +38,7 @@ import MuiAlert from "@mui/material/Alert";
 import Avatar from "@mui/material/Avatar";
 import { useRef } from "react";
 import DeleteModal from "./DeleteModal";
+import { Divider } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   tabsCustom: {
@@ -138,7 +139,14 @@ function EnhancedTableHead(props) {
   const classes = useStyles();
 
   return (
-    <TableHead className={classes.tabsCustom}>
+    <TableHead
+      style={{
+        backgroundColor: "rgb(0 173 255 / 40%)",
+        position: "relative",
+        zIndex: 9999,
+      }}
+      className={classes.tabsCustom}
+    >
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -943,7 +951,7 @@ export default function Empleados() {
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
-            <TableBody>
+            <TableBody style={{ position: "relative", zIndex: 9999 }}>
               {visibleRows
                 ? visibleRows.map((row, index) => {
                     const isItemSelected = isSelected(row.em_id);
@@ -985,7 +993,12 @@ export default function Empleados() {
                             alt="Remy Sharp"
                             // src="/static/images/avatar/1.jpg"
                             src={row.em_photo}
-                            style={{ width: 60, height: 60 }}
+                            style={{
+                              width: 60,
+                              height: 60,
+                              border: "2px solid black",
+                              borderRadius: "10%",
+                            }}
                           />
                         </TableCell>
                       </TableRow>
@@ -1004,6 +1017,12 @@ export default function Empleados() {
             </TableBody>
           </Table>
         </TableContainer>
+        <Divider
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        />
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
@@ -1012,11 +1031,22 @@ export default function Empleados() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        />
+        <Divider
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
         />
       </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
+        style={{ position: "relative", zIndex: 1 }}
       />
     </Box>
   );
@@ -1030,7 +1060,7 @@ Backdrop.propTypes = {
 
 const StyledModal = styled(Modal)`
   position: fixed;
-  z-index: 1300;
+  z-index: 10000;
   right: 0;
   bottom: 0;
   top: 0;

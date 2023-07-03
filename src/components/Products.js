@@ -21,6 +21,7 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
+import { Divider } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   tabsCustom: {
@@ -147,7 +148,14 @@ function EnhancedTableHead(props) {
   const classes = useStyles();
 
   return (
-    <TableHead className={classes.tabsCustom}>
+    <TableHead
+      style={{
+        backgroundColor: "rgb(0 173 255 / 40%)",
+        position: "relative",
+        zIndex: 9999,
+      }}
+      className={classes.tabsCustom}
+    >
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -392,7 +400,7 @@ export default function EnhancedTable() {
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
-            <TableBody>
+            <TableBody style={{ position: "relative", zIndex: 9999 }}>
               {visibleRows
                 ? visibleRows.map((row, index) => {
                     const isItemSelected = isSelected(row.name);
@@ -446,6 +454,12 @@ export default function EnhancedTable() {
             </TableBody>
           </Table>
         </TableContainer>
+        <Divider
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        />
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
@@ -454,11 +468,22 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        />
+        <Divider
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
         />
       </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
+        style={{ position: "relative", zIndex: 1 }}
       />
     </Box>
   );

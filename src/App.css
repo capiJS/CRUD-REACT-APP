@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+
+.app-container {
+  position: relative;
+  z-index: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-background {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.animation-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.animation-box {
+  width: 16.66%; /* 100% dividido por 6 columnas */
+  height: 33.33%; /* O el valor que desees para el alto de cada caja */
+  background-size: cover;
+  background-position: center center;
+  animation: expandContract 3s infinite ease-in-out;
+  opacity:0.4 ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes expandContract {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(0.8);
   }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Query para todas las pantallas */
+@media all {
+  /* Estilos para pantallas de ancho menor o igual a 768px */
+  @media (max-width: 768px) {
+    .animation-box {
+      width: 50%; /* Reducir el ancho de las cajas a la mitad */
+    }
+  }
+
+  /* Estilos para pantallas de ancho entre 769px y 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .animation-box {
+      width: 33.33%; /* Dividir el ancho de las cajas en 3 columnas */
+    }
+  }
+
+  /* Estilos para pantallas de ancho mayor a 1024px */
+  @media (min-width: 1025px) {
+    .animation-box {
+      width: 16.66%; /* Volver al ancho original de 6 columnas */
+    }
+  }
+
+  /* Estilos generales para todas las pantallas */
+  /* Por ejemplo: */
+  body {
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+  }
+
+  h1 {
+    font-size: 24px; /* Tamaño de fuente para encabezados */
+  }
+
+  /* Agrega tus estilos adicionales aquí */
 }

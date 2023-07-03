@@ -12,12 +12,16 @@ const useStyles = makeStyles((theme) => ({
   tabsCustom: {
     "& .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected .css-i4bv87-MuiSvgIcon-root   ":
       {
-        color: "#000",
+        color: "#65605d",
         fontSize: "2rem",
       },
     "& .css-imwso6-MuiBottomNavigationAction-label.Mui-selected": {
-      color: "#000",
+      color: "#65605d",
       fontSize: "1rem",
+      fontWeight: "bold",
+    },
+    "& .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root": {
+      color: "rgb(0 101 149)",
     },
   },
 }));
