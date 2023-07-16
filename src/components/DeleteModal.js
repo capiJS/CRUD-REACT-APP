@@ -20,7 +20,7 @@ const DeleteModal = ({ handleCloseModal, borrarProducto, selected }) => {
         width: "100%",
         height: "100%",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
-        zIndex: 9999,
+        zIndex: 10001,
       }}
       onClick={handleBackdropClick}
     >

@@ -1,3 +1,5 @@
+import darthImage from "../assets/starwars.jpg";
+
 export default function Home() {
   return (
     <div>
@@ -7,11 +9,10 @@ export default function Home() {
           width: "100%",
           height: "auto",
           maxWidth: "100vw",
-          maxHeight: "100vh",
-          opacity: "",
+          maxHeight: "90vh",
         }}
-        src="star-wars-darth-vader-emperor-palpatine-stormtrooper-wallpaper-preview.jpg"
-        alt="ultima cena star wars"
+        src={darthImage}
+        alt="imagen de darth vader"
       />
     </div>
   );
