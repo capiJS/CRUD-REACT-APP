@@ -585,6 +585,7 @@ export default function Clientes() {
     const response = await axios.get(`${webservices}/clientes`);
     setRows(response.data);
     console.log(response.data);
+    console.log(response);
   };
   //-----------------------------------------------
 
