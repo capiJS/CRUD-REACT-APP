@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CRUD-REACT-APP/static/css/main.ce32524b.css",
+    "main.css": "/CRUD-REACT-APP/static/css/main.b8481a33.css",
     "main.js": "/CRUD-REACT-APP/static/js/main.ecb69a6c.js",
     "static/js/787.8f5bd48d.chunk.js": "/CRUD-REACT-APP/static/js/787.8f5bd48d.chunk.js",
     "static/media/starwars.jpg": "/CRUD-REACT-APP/static/media/starwars.7b154c66ef177d87620a.jpg",
     "index.html": "/CRUD-REACT-APP/index.html",
-    "main.ce32524b.css.map": "/CRUD-REACT-APP/static/css/main.ce32524b.css.map",
+    "main.b8481a33.css.map": "/CRUD-REACT-APP/static/css/main.b8481a33.css.map",
     "main.ecb69a6c.js.map": "/CRUD-REACT-APP/static/js/main.ecb69a6c.js.map",
     "787.8f5bd48d.chunk.js.map": "/CRUD-REACT-APP/static/js/787.8f5bd48d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce32524b.css",
+    "static/css/main.b8481a33.css",
     "static/js/main.ecb69a6c.js"
   ]
 }
